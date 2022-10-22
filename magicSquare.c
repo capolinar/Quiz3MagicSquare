@@ -48,8 +48,9 @@ void printSquare(int a[3][3])
     {
         for(int j = 0; j < 3; j++)
         {
-            printf("%d",a[i][j]);
+            printf("[%d]",a[i][j]);
         }
+        printf("\n");
     }
 }
 //main goes here
