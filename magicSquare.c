@@ -11,6 +11,8 @@
 //check if each row, column, and diagnol add up to the same number
 //print if not magic square/reason
 //return true/false status
+
+//add print square function
 int main(void)
 {
     //part1
@@ -21,10 +23,12 @@ int main(void)
 
     //add verify function here
 
-    printf("Pre-made qquare print out: \n")
-    {
-        
-    }
+    printf("Pre-made square print out: \n");
+    
+    
+
+
+    
     
 
 
