@@ -13,6 +13,17 @@
 //return true/false status
 
 //add print square function
+void printSquare(a[3][3])
+{
+    for(int i = 3; i < 3; i++)
+    {
+        for(int j = 3; j < 3; j++)
+        {
+            printf(a[i][j]);
+        }
+    }
+}
+
 int main(void)
 {
     //part1
@@ -24,6 +35,7 @@ int main(void)
     //add verify function here
 
     printf("Pre-made square print out: \n");
+    printSquare(magicSq);
     
     
 
