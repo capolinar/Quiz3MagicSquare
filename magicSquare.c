@@ -13,16 +13,8 @@
 //return true/false status
 
 //add print square function
-void printSquare(a[3][3])
-{
-    for(int i = 3; i < 3; i++)
-    {
-        for(int j = 3; j < 3; j++)
-        {
-            printf(a[i][j]);
-        }
-    }
-}
+void printSquare(int a[3][3]);
+
 
 int main(void)
 {
@@ -47,9 +39,19 @@ int main(void)
 
 
 
-    return EXIT_SUCCESS
+    return EXIT_SUCCESS;
 }
 
+void printSquare(int a[3][3])
+{
+    for(int i = 3; i < 3; i++)
+    {
+        for(int j = 3; j < 3; j++)
+        {
+            printf("%d",a[i][j]);
+        }
+    }
+}
 //main goes here
 
 
