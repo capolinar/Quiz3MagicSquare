@@ -15,7 +15,7 @@
 //add print square function
 void printSquare(int a[3][3]);
 
-void verifyMagic(int a[3][3]);
+int verifyMagic(int a[3][3]);
 
 
 int main(void)
@@ -59,11 +59,32 @@ void printSquare(int a[3][3])
     }
 }
 
-void verifyMagic(int a[3][3])
+int verifyMagic(int a[3][3])//function to verify if magic square
 {
     int row1, row2, row3, col1, col2, col3, diag1, diag2;
-    row1 = a[0][0] + a[0][1] + [0][2];
-    row2 = a[1][0] + a[1][1] + [1][2];
+    row1 = a[0][0] + a[0][1] + a[0][2];
+    row2 = a[1][0] + a[1][1] + a[1][2];
+    row3 = a[2][0] + a[2][1] + a[2][2];
+
+    col1 = a[0][0] + a[1][0] + a[2][0];
+    col2 = a[0][1] + a[1][1] + a[2][1];
+    col3 = a[0][2] + a[1][2] + a[2][2];
+
+    diag1 = a[0][0] + a[1][1] + a[2][2];
+    diag2 = a[2][0] + a[1][1] + a[0][2];
+
+    if(row1 == row2 && row2 == row3 && row3 == col1 && col1 == col2 &&
+    col2 == col3 && col3 == diag1 && diag1 == diag2)//every number must be equal
+    {
+        printf("This is a magic square!!\n"); 
+        return 1; //return 1 if magic
+    }
+    else
+    {
+        printf("Not a magic square.\n");
+        return 0; //return if not magic
+
+    }
 }
 
 
