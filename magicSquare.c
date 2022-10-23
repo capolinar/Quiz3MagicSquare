@@ -23,6 +23,8 @@ void randomSquare(int a[3][3]);
 
 int main(void)
 {
+    time_t t;
+    srand((unsigned)  time(&t));
     //part1
 //create 2d array for 3x3 square that is already polulated
 //and is also already a magic square
@@ -54,17 +56,65 @@ int main(void)
 //keep count of loop
 //loop/randomize until it is a magic square
 //print square and placement
+    printf("Part 2, random squares: \n");
 
     magicStatus = 0;
     int count = 0;
     while(magicStatus != 1)
     {
-        int newSquare[3][3];
-        randomSquare(newSquare);
-        count++;
-        magicStatus = verifyMagic(newSquare);
+        int noRepeatArray[3][3];
+        for(int i = 0; i < 3; i++)
+        {
+            for (int l = 0; l < 3; l++)
+            {
+            
+                int rng = rand()  %  9 + 1;
+                noRepeatArray[i][l] = rng;
+
+                //start of verification process, no repeats
+                bool repeat = true;
+                while(repeat)
+                {
+                    bool verify = true;
+                    for(int j = 0; j < 3; j++)
+                    {
+                        for(int m = 0; m < 3; m++ )
+                        {
+                            if(noRepeatArray[i][l] == noRepeatArray[j][m])//while not on current part of array, verify no repeats
+                            {
+                                if(i == j && l == m)
+                                {
+
+                                }
+                                else
+                                {
+                                    verify = false;
+                                    count++;
+                                    noRepeatArray[i][l] = rand()  %  9 + 1;
+                                    
+
+                                }
+                                
+                            }
+
+                        }
+                    
+        
+                    }
+                    if(verify == true)
+                    {
+                        repeat = false;
+                    }
+                }
+                //end of verification process
+            
+            }
+        
+        }
+        printSquare(noRepeatArray);
+        magicStatus = verifyMagic(noRepeatArray);
     }
-    printf("Total count before magic square made: %d", count);
+    printf("Total count before magic square made: %d\n", count);
 
 
     
@@ -121,18 +171,19 @@ int verifyMagic(int a[3][3])//function to verify if magic square
     }
 }
 
-void randomSquare(int a[3][3])
+//printf("Message to find infinite loop \n");
+void randomSquare(int noRepeatArray[3][3])
 {
-    
-    int noRepeatArray[3][3]={0,0,0,0,0,0,0,0,0};
+   
+    //int noRepeatArray[3][3]={0,0,0,0,0,0,0,0,0};
     for(int i = 0; i < 3; i++)
     {
         for (int l = 0; l < 3; l++)
         {
-            time_t  t;
-            srand((unsigned)  time(&t));
+            
             int rng = rand()  %  9 + 1;
-            noRepeatArray[i][l] = rng;
+            printf("%d\n", rng);
+            /*
             bool repeat = true;
             while(repeat)
             {
@@ -144,6 +195,7 @@ void randomSquare(int a[3][3])
                         if(noRepeatArray[i][l] == noRepeatArray[j][m])
                         {
                             verify = false;
+                            printf("Message to find infinite loop \n");
                         }
 
                     }
@@ -155,10 +207,11 @@ void randomSquare(int a[3][3])
                     repeat = false;
                 }
             }
+            */
+            
         }
         
     }
-    a = noRepeatArray;
     
 }
 
