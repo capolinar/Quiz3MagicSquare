@@ -60,15 +60,17 @@ int main(void)
 
     magicStatus = 0;
     int count = 0;
+    int finalArray[3][3];
     while(magicStatus != 1)
     {
-        int noRepeatArray[3][3];
+        int noRepeatArray[3][3]={0,0,0,0,0,0,0,0,0};
         for(int i = 0; i < 3; i++)
         {
             for (int l = 0; l < 3; l++)
             {
             
                 int rng = rand()  %  9 + 1;
+               // printf("%d\n", rng);
                 noRepeatArray[i][l] = rng;
 
                 //start of verification process, no repeats
@@ -80,20 +82,17 @@ int main(void)
                     {
                         for(int m = 0; m < 3; m++ )
                         {
-                            if(noRepeatArray[i][l] == noRepeatArray[j][m])//while not on current part of array, verify no repeats
+                            if(i == j && l == m)
                             {
-                                if(i == j && l == m)
-                                {
+                                    //do nothing
 
-                                }
-                                else
-                                {
-                                    verify = false;
-                                    count++;
-                                    noRepeatArray[i][l] = rand()  %  9 + 1;
-                                    
-
-                                }
+                            }
+                            else if(noRepeatArray[i][l] == noRepeatArray[j][m]) //while not on current part of array, verify no repeats
+                            {
+                                verify = false;
+                                count++;
+                                noRepeatArray[i][l] = rand()  %  9 + 1;
+                                //printf("new num: %d \n", noRepeatArray[i][l]);
                                 
                             }
 
@@ -111,9 +110,17 @@ int main(void)
             }
         
         }
-        printSquare(noRepeatArray);
+        //printSquare(noRepeatArray); //print to confirm square was made
         magicStatus = verifyMagic(noRepeatArray);
+        for(int a = 0; a < 3; a++)
+        {
+            for(int b = 0; b < 3 ; b++)
+            {
+                finalArray[a][b] == noRepeatArray[a][b];
+            }
+        }
     }
+    printSquare(finalArray);
     printf("Total count before magic square made: %d\n", count);
 
 
