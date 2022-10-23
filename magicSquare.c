@@ -17,7 +17,7 @@ void printSquare(int a[3][3]);
 
 int verifyMagic(int a[3][3]);
 
-void randomSquare(int a[3][3]);
+int[3][3] randomSquare();
 
 
 int main(void)
@@ -58,9 +58,11 @@ int main(void)
     int count = 0;
     while(magicStatus != 1)
     {
-
-
+        int newSquare[3][3] = randomSquare();
+        count++;
+        magicStatus = verifyMagic(newSquare);
     }
+    printf("Total count before magic square made: %d", count);
 
 
     
@@ -117,38 +119,40 @@ int verifyMagic(int a[3][3])//function to verify if magic square
     }
 }
 
-int[3][3] randomSquare(int a[3][3])
+int[3][3] randomSquare()
 {
     
     int noRepeatArray[3][3]={0,0,0,0,0,0,0,0,0};
     for(int i = 0; i < 3; i++)
     {
-        for int l = 0; l < 3; l++)
+        for (int l = 0; l < 3; l++)
         {
-            noRepeatArray[i] = rnGenerator();
+            noRepeatArray[i][l] = rnGenerator();
             bool repeat = true;
             while(repeat)
             {
                 bool verify = true;
-                for(int j = 0; j < 9; j++)
+                for(int j = 0; j < 3; j++)
                 {
-                    if(noRepeatArray[i] == noRepeatArray[j])
+                    for(int m = 0; m < 3; m++ )
                     {
-                        verify = false;
+                        if(noRepeatArray[i][l] == noRepeatArray[j])
+                        {
+                            verify = false;
+                        }
+
                     }
+                    
         
                 }
                 if(verify == true)
                 {
                     repeat = false;
                 }
-        }
-
-        
+            }
         
     }
-
-            
+    return noRepeatArray;
     
 }
 
