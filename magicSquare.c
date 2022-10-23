@@ -129,7 +129,10 @@ void randomSquare(int a[3][3])
     {
         for (int l = 0; l < 3; l++)
         {
-            noRepeatArray[i][l] = rnGenerator();
+            time_t  t;
+            srand((unsigned)  time(&t));
+            int rng = rand()  %  9 + 1;
+            noRepeatArray[i][l] = rng;
             bool repeat = true;
             while(repeat)
             {
@@ -158,13 +161,6 @@ void randomSquare(int a[3][3])
     
 }
 
-int rnGenerator()
-{
-    time_t  t;
-    srand((unsigned)  time(&t));
-    int rng = rand()  %  9 + 1;
-    return rng;
-}
 
 
 
