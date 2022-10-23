@@ -59,6 +59,7 @@ int main(void)
     while(magicStatus != 1)
     {
 
+
     }
 
 
@@ -115,6 +116,51 @@ int verifyMagic(int a[3][3])//function to verify if magic square
 
     }
 }
+
+int[3][3] randomSquare(int a[3][3])
+{
+    
+    int noRepeatArray[3][3]={0,0,0,0,0,0,0,0,0};
+    for(int i = 0; i < 3; i++)
+    {
+        for int l = 0; l < 3; l++)
+        {
+            noRepeatArray[i] = rnGenerator();
+            bool repeat = true;
+            while(repeat)
+            {
+                bool verify = true;
+                for(int j = 0; j < 9; j++)
+                {
+                    if(noRepeatArray[i] == noRepeatArray[j])
+                    {
+                        verify = false;
+                    }
+        
+                }
+                if(verify == true)
+                {
+                    repeat = false;
+                }
+        }
+
+        
+        
+    }
+
+            
+    
+}
+
+int rnGenerator()
+{
+    time_t  t;
+    srand((unsigned)  time(&t));
+    int rng = rand()  %  9 + 1;
+    return rng;
+}
+
+
 
 
 
