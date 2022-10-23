@@ -31,6 +31,17 @@ int main(void)
     printSquare(magicSq);
 
     //add verify function here
+    int magicStatus = 0; //0 is not magic, 1 is magic
+    magicStatus = verifyMagic(magicSq); //should be magic
+    if(magicStatus == 1)
+    {
+        printf("Function works!!!");
+    }
+    else
+    {
+        printf("Function not working!!!");
+
+    }
 
 
     
