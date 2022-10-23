@@ -122,6 +122,8 @@ int main(void)
     }
     printSquare(finalArray);
     printf("Total count before magic square made: %d\n", count);
+    // 1/362,880 variations of the square are magic, so not likely to
+    // be created, given square was the only correct combo.
 
 
     
