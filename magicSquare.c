@@ -17,6 +17,8 @@ void printSquare(int a[3][3]);
 
 int verifyMagic(int a[3][3]);
 
+void randomSquare(int a[3][3]);
+
 
 int main(void)
 {
@@ -40,6 +42,22 @@ int main(void)
     else
     {
         printf("Function not working!!!");
+
+    }
+
+    //part2
+//create 2d arraygit
+//populate square, no repeats
+//populaton is by random
+//check if magic square
+//keep count of loop
+//loop/randomize until it is a magic square
+//print square and placement
+
+    magicStatus = 0;
+    int count = 0;
+    while(magicStatus != 1)
+    {
 
     }
 
