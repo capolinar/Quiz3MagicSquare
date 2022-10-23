@@ -140,7 +140,7 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-void printSquare(int a[3][3])
+void printSquare(int a[3][3]) //prints Square
 {
     for(int i = 0; i < 3; i++)
     {
@@ -180,63 +180,5 @@ int verifyMagic(int a[3][3])//function to verify if magic square
     }
 }
 
-//printf("Message to find infinite loop \n");
-void randomSquare(int noRepeatArray[3][3])
-{
-   
-    //int noRepeatArray[3][3]={0,0,0,0,0,0,0,0,0};
-    for(int i = 0; i < 3; i++)
-    {
-        for (int l = 0; l < 3; l++)
-        {
-            
-            int rng = rand()  %  9 + 1;
-            printf("%d\n", rng);
-            /*
-            bool repeat = true;
-            while(repeat)
-            {
-                bool verify = true;
-                for(int j = 0; j < 3; j++)
-                {
-                    for(int m = 0; m < 3; m++ )
-                    {
-                        if(noRepeatArray[i][l] == noRepeatArray[j][m])
-                        {
-                            verify = false;
-                            printf("Message to find infinite loop \n");
-                        }
-
-                    }
-                    
-        
-                }
-                if(verify == true)
-                {
-                    repeat = false;
-                }
-            }
-            */
-            
-        }
-        
-    }
-    
-}
-
-
-
-
-
-
-
-//part2
-//create 2d arraygit
-//populate square, no repeats
-//populaton is by random
-//check if magic square
-//keep count of loop
-//loop/randomize until it is a magic square
-//print square and placement
 
 //return success message
