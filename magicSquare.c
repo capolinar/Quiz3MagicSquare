@@ -155,6 +155,7 @@ void randomSquare(int a[3][3])
                     repeat = false;
                 }
             }
+        }
         
     }
     a = noRepeatArray;
