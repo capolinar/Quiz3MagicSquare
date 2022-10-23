@@ -15,6 +15,8 @@
 //add print square function
 void printSquare(int a[3][3]);
 
+void verifyMagic(int a[3][3]);
+
 
 int main(void)
 {
@@ -24,10 +26,13 @@ int main(void)
 //Test/verify if magic square
     int magicSq[3][3] = {4,9,2,3,5,7,8,1,6};//3x3 magic square
 
-    //add verify function here
 
     printf("Pre-made square print out: \n");
     printSquare(magicSq);
+
+    //add verify function here
+
+
     
     
 
@@ -53,13 +58,16 @@ void printSquare(int a[3][3])
         printf("\n");
     }
 }
-//main goes here
+
+void verifyMagic(int a[3][3])
+{
+    int row1, row2, row3, col1, col2, col3, diag1, diag2;
+    row1 = a[0][0] + a[0][1] + [0][2];
+    row2 = a[1][0] + a[1][1] + [1][2];
+}
 
 
-//part1
-//create 2d array for 3x3 square that is already polulated
-//and is also already a magic square
-//Test/verify if magic square
+
 
 //part2
 //create 2d arraygit
