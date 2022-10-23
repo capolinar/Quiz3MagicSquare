@@ -4,6 +4,7 @@
 #include  <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdbool.h>
 
 //magic square verification code to be called
 //check and verify if numbers are 1 to 9 (no 0 or 10+)
@@ -137,7 +138,7 @@ void randomSquare(int a[3][3])
                 {
                     for(int m = 0; m < 3; m++ )
                     {
-                        if(noRepeatArray[i][l] == noRepeatArray[j])
+                        if(noRepeatArray[i][l] == noRepeatArray[j][m])
                         {
                             verify = false;
                         }
