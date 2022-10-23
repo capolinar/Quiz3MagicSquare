@@ -17,7 +17,7 @@ void printSquare(int a[3][3]);
 
 int verifyMagic(int a[3][3]);
 
-int[3][3] randomSquare();
+void randomSquare(int a[3][3]);
 
 
 int main(void)
@@ -58,7 +58,8 @@ int main(void)
     int count = 0;
     while(magicStatus != 1)
     {
-        int newSquare[3][3] = randomSquare();
+        int newSquare[3][3];
+        randomSquare(newSquare);
         count++;
         magicStatus = verifyMagic(newSquare);
     }
@@ -119,7 +120,7 @@ int verifyMagic(int a[3][3])//function to verify if magic square
     }
 }
 
-int[3][3] randomSquare()
+void randomSquare(int a[3][3])
 {
     
     int noRepeatArray[3][3]={0,0,0,0,0,0,0,0,0};
@@ -152,7 +153,7 @@ int[3][3] randomSquare()
             }
         
     }
-    return noRepeatArray;
+    a = noRepeatArray;
     
 }
 
